@@ -11,27 +11,27 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
  * @author ivan.graciarena
  * @project order-domain-automation
  */
-public class ListUsers implements Task {
+public class ListOrders implements Task {
 
     private final int page;
 
-    public ListUsers(int page) {
+    public ListOrders(int page) {
         this.page = page;
     }
 
-    public ListUsers() {
+    public ListOrders() {
         this.page = 1;
     }
 
-    public static ListUsers onPage(int page) {
-        return instrumented(ListUsers.class, page);
+    public static ListOrders onPage(int page) {
+        return instrumented(ListOrders.class, page);
     }
 
     @Override
-    @Step("{0} lists users on page #page")
+    @Step("{0} lists orders on page #page")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Get.resource("/users")
+                Get.resource("/orders/1")
                         .with(request -> request.queryParam("page", page))
         );
     }
