@@ -28,8 +28,9 @@ public class GetUsers implements Task {
     @Step("{0} lists users on page #page")
     public <T extends Actor> void performAs(final T actor) {
         actor.attemptsTo(
-                GetForUsers.resource("/users")
-                        .with(request -> request.contentType(ContentType.JSON))
+                GetForUsers.resource("/users?page=" + page)
+                        .with(request -> request.contentType(ContentType.JSON)
+                                .header("header1", "value1"))
         );
     }
 }

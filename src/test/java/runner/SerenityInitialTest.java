@@ -57,7 +57,7 @@ class SerenityInitialTest {
         var user = new UserContent().answeredBy(ivan)
                 .getData()
                 .stream()
-                .filter(userOnPage -> userOnPage.getId() == 1)
+                .filter(userOnPage -> userOnPage.getId() == 7)
                 .findFirst()
                 .orElse(null);
 

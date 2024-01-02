@@ -73,12 +73,22 @@
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-junit</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay</artifactId>
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-screenplay-rest</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
             <version>${serenity.version}</version>
         </dependency>
         <dependency>
@@ -175,7 +185,8 @@
         <profile>
             <id>local</id>
             <properties>
-                <restapi.baseurl>http://localhost:5000/api</restapi.baseurl>
+<!--                <restapi.baseurl>http://localhost:5000/api</restapi.baseurl>-->
+                <restapi.baseurl>https://reqres.in/api</restapi.baseurl>
             </properties>
         </profile>
         <profile>
